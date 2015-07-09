@@ -60,7 +60,7 @@ func Resize(buf []byte, o Options) ([]byte, error) {
 	}
 
 	// Try to use libjpeg shrink-on-load
-	if imageType == JPEG && shrink >= 2 {
+	/*if imageType == JPEG && shrink >= 2 {
 		tmpImage, factor, err := shrinkJpegImage(buf, image, factor, shrink)
 		if err != nil {
 			return nil, err
@@ -70,7 +70,8 @@ func Resize(buf []byte, o Options) ([]byte, error) {
 		factor = math.Max(factor, 1.0)
 		shrink = int(math.Floor(factor))
 		residual = float64(shrink) / factor
-	}
+	}*/
+	debug("TEST")
 
 	// Zoom image, if necessary
 	image, err = zoomImage(image, o.Zoom)
